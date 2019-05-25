@@ -3,6 +3,12 @@
     box-sizing: border-box;
 }
 
+@media (max-width: 30em) {
+    :root {
+        font-size: 0.8em;
+    }
+}
+
 *,
 ::before,
 ::after {
@@ -16,13 +22,13 @@ body {
 
 .container {
     max-width: 30em;
-    margin: 2vh auto;
+    margin: 0.8vh auto;
     min-height: 64em;
     max-height: 80vh;
     padding: 4.8em 1.5em;
 }
 
-@media (max-width: 30rem) {
+@media (max-width: 30em) {
     .container {
         max-width: 100%;
         margin: 0;
@@ -45,6 +51,12 @@ body {
     overflow: auto;
 }
 
+@media (max-width: 30em) {
+    .main-input {
+        height: 3em;
+    }
+}
+
 .main-input>input {
     width: 9.6rem;
     font-weight: bold;
@@ -61,8 +73,9 @@ body {
 }
 
 .display {
-    height: 17.06em;
-    width: 25em;
+    min-height: 20vh;
+    max-height: 17.06em;
+    max-width: 25em;
     margin: 0 auto;
     margin-top: 2em;
     border: .25em solid #04E1FF;
@@ -75,7 +88,7 @@ body {
     border-radius: 0.7em;
 }
 
-@media (max-width: 30rem) {
+@media (max-width: 30em) {
     .display {
         width: 100%;
         padding: 0 0.8rem;
@@ -95,9 +108,9 @@ body {
     /* overflow: auto; */
 }
 
-@media (max-width: 30rem) {
+@media (max-width: 30em) {
     .display>.display-output {
-        width: 50%;
+        width: 60%;
     }
 }
 
@@ -116,7 +129,13 @@ body {
     display: block;
 }
 
-@media (max-width: 30rem) {
+
+
+@media (max-width: 30em) {
+    .display>.display-output>p {
+        width: 100%;
+    }
+
     .display>.display-output:nth-child(even) {
         justify-self: center;
     }
@@ -147,6 +166,7 @@ body {
     font-weight: bold;
     letter-spacing: 0.3rem;
 }
+
 @media (max-width: 30rem) {
     .brand {
         margin-top: 0.5rem;
@@ -199,6 +219,8 @@ body {
 }
 
 
+
+
 .key-pad>div>.circle:before {
     content: "";
     width: 4.80rem;
@@ -216,13 +238,34 @@ body {
     z-index: -1;
     content: "";
     padding: 1.65rem;
-    border: 1.006rem solid #04E1FF;
+    border: 1rem solid #04E1FF;
     border-radius: 50%;
     position: absolute;
     top: -0.256rem;
     left: -0.256rem;
     cursor: pointer;
 
+}
+
+@media (max-width: 20em) {
+    .key-pad>div>.circle {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .key-pad>div>.circle:before {
+        content: "";
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .key-pad>div>.circle:after {
+        padding: 1.25rem;
+        border: 0.8rem solid #04E1FF;
+        top: -0.256rem;
+        left: -0.256rem;
+
+    }
 }
 
 .key-pad>div>.square {
@@ -241,4 +284,17 @@ body {
     top: 0;
     left: 0;
     z-index: 1;
+}
+
+
+@media (max-width: 30em) {
+    .key-pad {
+        margin-top: 0.8em;
+    }
+}
+@media (max-width: 20em) {
+    .key-pad {
+        margin-top: 0.8em;
+        grid-row-gap: 0.8rem;
+    }
 }
